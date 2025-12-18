@@ -40,19 +40,19 @@ wp-content/themes/YOUR-THEME/functions.php
 ## 📖 نحوه استفاده
 
 ### قدم اول: نام‌گذاری فرم
-نام فرم المنتور خود را طوری انتخاب کنید که با `-meta` پایان یابد:
+نام فرم المنتور خود را طوری انتخاب کنید که با `_meta` پایان یابد:
 
 ```
-نام فرم: contact-form-meta
-نام فرم: user-profile-meta
-نام فرم: product-update-meta
+نام فرم: contact_form_meta
+نام فرم: user_profile_meta
+نام فرم: product_update_meta
 ```
 
 ### قدم دوم: نام‌گذاری فیلدها
 شناسه (ID) فیلدهای فرم را بر اساس الگوی زیر تنظیم کنید:
 
 ```
-[نام-متا]-meta-[نوع]-[آیدی]
+[نام_متا]_meta_[نوع]_[آیدی]
 ```
 
 ## 🎯 انواع متا
@@ -62,9 +62,9 @@ wp-content/themes/YOUR-THEME/functions.php
 برای ذخیره در متای کاربر فعلی:
 
 ```
-شناسه فیلد: phone-meta-user
-شناسه فیلد: address-meta-user
-شناسه فیلد: company-meta-user
+شناسه فیلد: phone_meta_user
+شناسه فیلد: address_meta_user
+شناسه فیلد: company_meta_user
 ```
 
 **نتیجه:**
@@ -78,8 +78,8 @@ wp-content/themes/YOUR-THEME/functions.php
 
 #### 2.1. با ID ثابت:
 ```
-شناسه فیلد: discount-meta-product-123
-شناسه فیلد: stock-meta-product-456
+شناسه فیلد: discount_meta_product_123
+شناسه فیلد: stock_meta_product_456
 ```
 
 **نتیجه:** در متای محصول با ID مشخص ذخیره می‌شود
@@ -87,8 +87,8 @@ wp-content/themes/YOUR-THEME/functions.php
 #### 2.2. با ID داینامیک:
 ```
 فیلد 1 شناسه: product_id (نوع: Hidden یا Number)
-فیلد 2 شناسه: discount-meta-product
-فیلد 3 شناسه: warranty-meta-product
+فیلد 2 شناسه: discount_meta_product
+فیلد 3 شناسه: warranty_meta_product
 ```
 
 **نتیجه:** 
@@ -101,14 +101,14 @@ wp-content/themes/YOUR-THEME/functions.php
 
 #### 3.1. با ID ثابت:
 ```
-شناسه فیلد: views-meta-post-789
-شناسه فیلد: rating-meta-post-100
+شناسه فیلد: views_meta_post_789
+شناسه فیلد: rating_meta_post_100
 ```
 
 #### 3.2. با ID داینامیک:
 ```
 فیلد 1 شناسه: post_id
-فیلد 2 شناسه: custom-field-meta-post
+فیلد 2 شناسه: custom_field_meta_post
 ```
 
 ---
@@ -119,16 +119,16 @@ wp-content/themes/YOUR-THEME/functions.php
 
 #### 4.1. با ID ثابت:
 ```
-شناسه فیلد: author-meta-book-50
-شناسه فیلد: instructor-meta-course-25
-شناسه فیلد: location-meta-event-99
+شناسه فیلد: author_meta_book_50
+شناسه فیلد: instructor_meta_course_25
+شناسه فیلد: location_meta_event_99
 ```
 
 #### 4.2. با ID داینامیک:
 ```
 فیلد 1 شناسه: book_id
-فیلد 2 شناسه: genre-meta-book
-فیلد 3 شناسه: publisher-meta-book
+فیلد 2 شناسه: genre_meta_book
+فیلد 3 شناسه: publisher_meta_book
 ```
 
 ---
@@ -139,14 +139,14 @@ wp-content/themes/YOUR-THEME/functions.php
 
 #### 5.1. با ID ثابت:
 ```
-شناسه فیلد: icon-meta-term-10
-شناسه فیلد: color-meta-term-20
+شناسه فیلد: icon_meta_term_10
+شناسه فیلد: color_meta_term_20
 ```
 
 #### 5.2. با ID داینامیک:
 ```
 فیلد 1 شناسه: term_id
-فیلد 2 شناسه: description-meta-term
+فیلد 2 شناسه: description_meta_term
 ```
 
 ---
@@ -154,8 +154,8 @@ wp-content/themes/YOUR-THEME/functions.php
 ### 6. متای کامنت (Comment Meta)
 
 ```
-شناسه فیلد: helpful-meta-comment-150
-شناسه فیلد: verified-meta-comment-200
+شناسه فیلد: helpful_meta_comment_150
+شناسه فیلد: verified_meta_comment_200
 ```
 
 ---
@@ -164,14 +164,14 @@ wp-content/themes/YOUR-THEME/functions.php
 
 ### مثال 1: فرم پروفایل کاربری
 
-**نام فرم:** `user-profile-meta`
+**نام فرم:** `user_profile_meta`
 
 | برچسب فیلد | شناسه فیلد | مقدار نمونه |
 |------------|------------|-------------|
-| شماره تماس | `phone-meta-user` | 09123456789 |
-| آدرس | `address-meta-user` | تهران، خیابان... |
-| کد ملی | `national_code-meta-user` | 0012345678 |
-| شغل | `job-meta-user` | برنامه‌نویس |
+| شماره تماس | `phone_meta_user` | 09123456789 |
+| آدرس | `address_meta_user` | تهران، خیابان... |
+| کد ملی | `national_code_meta_user` | 0012345678 |
+| شغل | `job_meta_user` | برنامه‌نویس |
 
 **نتیجه:** همه این اطلاعات در `user_meta` کاربر فعلی ذخیره می‌شوند.
 
@@ -179,14 +179,14 @@ wp-content/themes/YOUR-THEME/functions.php
 
 ### مثال 2: فرم به‌روزرسانی محصول
 
-**نام فرم:** `product-update-meta`
+**نام فرم:** `product_update_meta`
 
 | برچسب فیلد | شناسه فیلد | نوع فیلد |
 |------------|------------|----------|
 | آیدی محصول | `product_id` | Hidden |
-| تخفیف ویژه | `special_discount-meta-product` | Number |
-| گارانتی | `warranty_period-meta-product` | Text |
-| موجودی | `available_stock-meta-product` | Number |
+| تخفیف ویژه | `special_discount_meta_product` | Number |
+| گارانتی | `warranty_period_meta_product` | Text |
+| موجودی | `available_stock_meta_product` | Number |
 
 **نحوه کار:**
 1. کاربر ID محصول را وارد می‌کند (یا از URL می‌خوانید)
@@ -197,41 +197,41 @@ wp-content/themes/YOUR-THEME/functions.php
 
 ### مثال 3: فرم ثبت کتاب (Custom Post Type)
 
-**نام فرم:** `book-register-meta`
+**نام فرم:** `book_register_meta`
 
 فرض کنید پست تایپ `book` دارید:
 
 | برچسب فیلد | شناسه فیلد | نوع فیلد |
 |------------|------------|----------|
 | آیدی کتاب | `book_id` | Number |
-| نویسنده | `author_name-meta-book` | Text |
-| ژانر | `genre-meta-book` | Select |
-| سال انتشار | `publish_year-meta-book` | Number |
-| ناشر | `publisher-meta-book` | Text |
-| ISBN | `isbn-meta-book` | Text |
+| نویسنده | `author_name_meta_book` | Text |
+| ژانر | `genre_meta_book` | Select |
+| سال انتشار | `publish_year_meta_book` | Number |
+| ناشر | `publisher_meta_book` | Text |
+| ISBN | `isbn_meta_book` | Text |
 
 ---
 
 ### مثال 4: فرم نظرات پیشرفته
 
-**نام فرم:** `review-advanced-meta`
+**نام فرم:** `review_advanced_meta`
 
 | برچسب فیلد | شناسه فیلد |
 |------------|------------|
-| آیا مفید بود؟ | `is_helpful-meta-comment-{ID}` |
-| امتیاز کیفیت | `quality_rating-meta-comment-{ID}` |
+| آیا مفید بود؟ | `is_helpful_meta_comment_{ID}` |
+| امتیاز کیفیت | `quality_rating_meta_comment_{ID}` |
 
 ---
 
 ### مثال 5: فرم چند منظوره
 
-**نام فرم:** `multi-purpose-meta`
+**نام فرم:** `multi_purpose_meta`
 
 ```
-فیلد 1: phone-meta-user (شماره تماس کاربر)
+فیلد 1: phone_meta_user (شماره تماس کاربر)
 فیلد 2: product_id (محصول مورد نظر)
-فیلد 3: user_review-meta-product (نظر کاربر در متای محصول)
-فیلد 4: purchase_count-meta-user (تعداد خرید در متای کاربر)
+فیلد 3: user_review_meta_product (نظر کاربر در متای محصول)
+فیلد 4: purchase_count_meta_user (تعداد خرید در متای کاربر)
 ```
 
 این فرم همزمان در User Meta و Product Meta ذخیره می‌کند!
@@ -241,14 +241,14 @@ wp-content/themes/YOUR-THEME/functions.php
 ## 📌 نکات مهم
 
 ### 1. نام‌گذاری فرم
-- حتماً نام فرم باید با `-meta` تمام شود
-- ❌ اشتباه: `contact-form`
-- ✅ درست: `contact-form-meta`
+- حتماً نام فرم باید با `_meta` تمام شود
+- ❌ اشتباه: `contact_form`
+- ✅ درست: `contact_form_meta`
 
 ### 2. شناسه فیلدها
-- از خط تیره (`-`) استفاده کنید نه آندرلاین
-- ❌ اشتباه: `phone_meta_user`
-- ✅ درست: `phone-meta-user`
+- از آندرلاین (`_`) استفاده کنید
+- ❌ اشتباه: `phone-meta-user`
+- ✅ درست: `phone_meta_user`
 
 ### 3. کاربر باید لاگین باشد
 برای ذخیره در User Meta، کاربر باید لاگین کرده باشد. در غیر این صورت متا ذخیره نمی‌شود.
@@ -256,10 +256,10 @@ wp-content/themes/YOUR-THEME/functions.php
 ### 4. ID داینامیک
 برای استفاده از ID داینامیک، نام فیلد شامل ID باید یکی از این‌ها باشد:
 ```
-product_id, product-id, productId, productID
-post_id, post-id, postId, postID
-book_id, book-id, bookId, bookID
-term_id, term-id, termId, termID
+product_id, productId, productID
+post_id, postId, postID
+book_id, bookId, bookID
+term_id, termId, termID
 ```
 
 ### 5. اولویت پردازش
@@ -285,16 +285,16 @@ term_id, term-id, termId, termID
 
 **راه‌حل‌های محتمل:**
 
-1. **چک کنید نام فرم با `-meta` تمام شود**
+1. **چک کنید نام فرم با `_meta` تمام شود**
    ```
-   ✅ my-form-meta
-   ❌ my-form
+   ✅ my_form_meta
+   ❌ my_form
    ```
 
 2. **چک کنید شناسه فیلد صحیح باشد**
    ```
-   ✅ phone-meta-user
-   ❌ phone_meta_user
+   ✅ phone_meta_user
+   ❌ phone-meta-user
    ❌ phonemetauser
    ```
 
@@ -374,7 +374,7 @@ $field_value = apply_filters('dynamic_meta_before_save', $field_value, $field_id
 
 ```php
 add_filter('dynamic_meta_before_save', function($value, $field_id) {
-    if ($field_id === 'phone-meta-user') {
+    if ($field_id === 'phone_meta_user') {
         // فرمت شماره تلفن را تغییر دهید
         $value = str_replace(' ', '', $value);
     }
@@ -387,16 +387,16 @@ add_filter('dynamic_meta_before_save', function($value, $field_id) {
 ## 📊 مثال پیشرفته: فرم ثبت سفارش
 
 ```
-نام فرم: order-registration-meta
+نام فرم: order_registration_meta
 
 فیلدها:
-1. user_phone-meta-user (شماره کاربر)
-2. user_address-meta-user (آدرس کاربر)
+1. user_phone_meta_user (شماره کاربر)
+2. user_address_meta_user (آدرس کاربر)
 3. product_id (آیدی محصول - Hidden)
-4. customer_note-meta-product (یادداشت مشتری روی محصول)
-5. last_purchase_date-meta-product (تاریخ آخرین خرید)
+4. customer_note_meta_product (یادداشت مشتری روی محصول)
+5. last_purchase_date_meta_product (تاریخ آخرین خرید)
 6. term_id (آیدی دسته‌بندی - Hidden)
-7. most_sold_in_category-meta-term (پرفروش‌ترین محصول دسته)
+7. most_sold_in_category_meta_term (پرفروش‌ترین محصول دسته)
 ```
 
 این فرم همزمان:
@@ -421,4 +421,14 @@ add_filter('dynamic_meta_before_save', function($value, $field_id) {
 
 این کد رایگان و آزاد است. می‌توانید آن را در پروژه‌های شخصی و تجاری خود استفاده کنید.
 
----**
+---
+
+## 🎉 نتیجه
+
+با این سیستم می‌توانید:
+- ✅ فرم‌های المنتور را به سیستم مدیریت متا تبدیل کنید
+- ✅ بدون کدنویسی اضافی، متای هر چیزی را مدیریت کنید
+- ✅ فرم‌های پیچیده و چند منظوره بسازید
+- ✅ یک سیستم یکپارچه برای تمام نیازهای فرم داشته باشید
+
+**موفق باشید! 🚀**
