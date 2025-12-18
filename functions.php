@@ -33,6 +33,36 @@ function handle_dynamic_meta_form_submission($record, $handler) {
  */
 function process_meta_field($field_id, $field_value, $all_fields) {
     
+    // 0. فیلدهای اصلی پست/محصول با ID مشخص: post_title_meta_product_123
+    if (preg_match('/^(post_title|post_content|post_excerpt|post_status|post_name)_meta_([a-zA-Z_]+)_(\d+)$/', $field_id, $matches)) {
+        $field_name = $matches[1];
+        $post_type = $matches[2];
+        $post_id = intval($matches[3]);
+        
+        $post_data = array(
+            'ID' => $post_id,
+            $field_name => sanitize_text_field($field_value)
+        );
+        wp_update_post($post_data);
+        return;
+    }
+    
+    // 0.1. فیلدهای اصلی پست/محصول با ID داینامیک: post_title_meta_product
+    if (preg_match('/^(post_title|post_content|post_excerpt|post_status|post_name)_meta_([a-zA-Z_]+)$/', $field_id, $matches)) {
+        $field_name = $matches[1];
+        $post_type = $matches[2];
+        $post_id = find_related_id($all_fields, $post_type);
+        
+        if ($post_id) {
+            $post_data = array(
+                'ID' => $post_id,
+                $field_name => sanitize_text_field($field_value)
+            );
+            wp_update_post($post_data);
+        }
+        return;
+    }
+    
     // 1. متای کاربر فعلی: _meta_user
     if (preg_match('/_meta_user$/', $field_id)) {
         $user_id = get_current_user_id();
